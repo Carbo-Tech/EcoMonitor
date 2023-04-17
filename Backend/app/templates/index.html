@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Inquinamento da Polveri Sottili in Veneto</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+
+<body>
+    <header>
+        <h1>Inquinamento da Polveri Sottili in Veneto</h1>
+    </header>
+    <nav>
+        <ul>
+            <li><a href="{{ url_for('home') }}">Home</a></li>
+            <li><a href="{{ url_for('about') }}">About</a></li>
+            <li><a href="{{ url_for('contact') }}">Contact</a></li>
+        </ul>
+    </nav>
+    <div id="content">
+        <h2>Dati ARPAV</h2>
+        <table>
+            <tr>
+                <th>Data</th>
+                <th>Valore PM10</th>
+                <th>Valore PM2.5</th>
+            </tr> {% for data in dati %} <tr>
+                <td>{{ data['data'] }}</td>
+                <td>{{ data['pm10'] }} &micro;g/m&sup3;</td>
+                <td>{{ data['pm25'] }} &micro;g/m&sup3;</td>
+            </tr> {% endfor %}
+        </table>
+        <p>Sorgente dati: <a href="http://www.arpa.veneto.it/arpavinforma/bollettini.php">ARPAV</a></p>
+    </div>
+    <footer>
+        <p>&copy; 2021 - Progetto Flask</p>
+    </footer>
+</body>
+
+</html>

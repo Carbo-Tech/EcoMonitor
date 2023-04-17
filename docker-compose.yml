@@ -3,8 +3,8 @@ version: "3.3"
 services:
   frontend:
     tty: true
-    container_name: derweze_frontend
-    hostname: derweze_frontend
+    container_name: eco_monitor
+    hostname: eco_monitor
     ports:
       - 3000:3000
       - 2999:2999
@@ -14,10 +14,7 @@ services:
     restart: always
 
     volumes:
-      - ./yarn_cache:/yarn
       - ./Frontend:/app
-      - /app/node_modules
-      - /app/.next
     networks:
       - external
       - web
@@ -29,10 +26,10 @@ services:
 
     ports:
       - 3307:443
-    container_name: derweze_backend
-    hostname: derweze_backend
+    container_name: eco_monitor_backend
+    hostname: eco_monitor_backend
     environment:
-      DATABASE: "derweze"
+      DATABASE: "eco_monitor"
       USER_DB: "root"
       PASSWORD_DB: "passwordsicura"
       PORT: 443
@@ -44,25 +41,10 @@ services:
       - external
       - internal
 
-  mockapi:
-    build:
-      context: MockAPI
-      target: builder
-    container_name: derweze_mockapi
-    hostname: derweze_mockapi
-    environment:
-      PORT: 443
-    restart: "no"
-    volumes:
-      - ./MockAPI/app:/app
-    networks:
-      - web
-    ports:
-      - 3310:443
 
   mysql:
-    hostname: derweze_mysql
-    container_name: derweze_mysql
+    hostname: eco_monitor_mysql
+    container_name: eco_monitor_mysql
     ports:
       - 3306:3306
 
@@ -71,7 +53,7 @@ services:
       dockerfile: Dockerfile
     environment:
       MYSQL_ROOT_PASSWORD: passwordsicura
-      MYSQL_DATABASE: derweze
+      MYSQL_DATABASE: eco_monitor
       PORT: 3306
     volumes:
       - ./Database:/appdb
