@@ -1,6 +1,5 @@
 # syntax = docker/dockerfile:1.4
-
-FROM tiangolo/uvicorn-gunicorn-fastapi:python3.9-slim AS builder
+FROM tiangolo/uvicorn-gunicorn-fastapi:python3.10 AS builder
 
 WORKDIR /app
 
@@ -23,20 +22,3 @@ usermod -aG docker vscode
 EOF
 # install Docker tools (cli, buildx, compose)
 COPY --from=gloursdocker/docker / /
-
-#FROM python:3.9
-#ARG PORT
-## 
-#WORKDIR /app
-#
-## 
-#COPY ./requirements.txt /app/requirements.txt
-#
-## 
-#RUN pip install  -r /app/requirements.txt
-#RUN pip install  uvicorn
-#
-## 
-#
-## 
-#CMD ["uvicorn", "main:app", "--host", "0.0.0.0", "--port", PORT, "--reload"]

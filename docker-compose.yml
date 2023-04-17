@@ -53,7 +53,7 @@ services:
       dockerfile: Dockerfile
     environment:
       MYSQL_ROOT_PASSWORD: passwordsicura
-      MYSQL_DATABASE: eco_monitor
+      MYSQL_DATABASE: edciv
       PORT: 3306
     volumes:
       - ./Database:/appdb
