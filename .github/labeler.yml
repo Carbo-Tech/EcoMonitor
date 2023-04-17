@@ -1,0 +1,13 @@
+
+documentation:
+  - '**/*.md'
+workflows:
+  - .github/workflows/*
+Database:
+  - Database/*
+Backend:
+  - Backend/*
+Frontend:
+  - Frontend/*
+MockAPI:
+  - MockAPI/*

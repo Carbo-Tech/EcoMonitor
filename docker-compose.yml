@@ -1,0 +1,89 @@
+version: "3.3"
+
+services:
+  frontend:
+    tty: true
+    container_name: derweze_frontend
+    hostname: derweze_frontend
+    ports:
+      - 3000:3000
+      - 2999:2999
+    build:
+      context: Frontend
+      dockerfile: Dockerfile
+    restart: always
+
+    volumes:
+      - ./yarn_cache:/yarn
+      - ./Frontend:/app
+      - /app/node_modules
+      - /app/.next
+    networks:
+      - external
+      - web
+
+  backend:
+    build:
+      context: Backend
+      target: builder
+
+    ports:
+      - 3307:443
+    container_name: derweze_backend
+    hostname: derweze_backend
+    environment:
+      DATABASE: "derweze"
+      USER_DB: "root"
+      PASSWORD_DB: "passwordsicura"
+      PORT: 443
+    restart: "no"
+    volumes:
+      - ./Backend/app:/app
+    networks:
+      - web
+      - external
+      - internal
+
+  mockapi:
+    build:
+      context: MockAPI
+      target: builder
+    container_name: derweze_mockapi
+    hostname: derweze_mockapi
+    environment:
+      PORT: 443
+    restart: "no"
+    volumes:
+      - ./MockAPI/app:/app
+    networks:
+      - web
+    ports:
+      - 3310:443
+
+  mysql:
+    hostname: derweze_mysql
+    container_name: derweze_mysql
+    ports:
+      - 3306:3306
+
+    build:
+      context: Database
+      dockerfile: Dockerfile
+    environment:
+      MYSQL_ROOT_PASSWORD: passwordsicura
+      MYSQL_DATABASE: derweze
+      PORT: 3306
+    volumes:
+      - ./Database:/appdb
+    networks:
+      - web
+      - internal
+
+networks:
+  web:
+    driver: bridge
+  internal:
+    driver: bridge
+    internal: true
+  external:
+    driver: bridge
