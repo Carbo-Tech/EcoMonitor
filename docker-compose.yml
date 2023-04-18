@@ -17,6 +17,7 @@ services:
       - ./Frontend:/app
     networks:
       - external
+      - internal
       - web
 
   backend:
@@ -29,7 +30,7 @@ services:
     container_name: eco_monitor_backend
     hostname: eco_monitor_backend
     environment:
-      DATABASE: "eco_monitor"
+      DATABASE: "edciv"
       USER_DB: "root"
       PASSWORD_DB: "passwordsicura"
       PORT: 443
