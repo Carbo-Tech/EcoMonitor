@@ -185,3 +185,56 @@ caption {
     color: #dcdcdc;
     padding: 10px;
 }
+
+/* Contatti styles */
+main ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+main li strong {
+    display: inline-block;
+    width: 100px;
+}
+
+main form {
+    max-width: 500px;
+    margin: 20px auto;
+}
+
+main form label, 
+main form input, 
+main form textarea, 
+main form button {
+    display: block;
+    width: 100%;
+}
+
+main form label {
+    margin-top: 10px;
+}
+
+main form input, 
+main form textarea {
+    padding: 10px;
+    border-radius: 5px;
+    border: none;
+    background-color: #4d4d4d;
+    color: #dcdcdc;
+}
+
+main form button {
+    padding: 10px;
+    border-radius: 5px;
+    border: none;
+    background-color: #333333;
+    color: #dcdcdc;
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 0.2s ease-in-out;
+}
+
+main form button:hover {
+    background-color: #4d4d4d;
+}

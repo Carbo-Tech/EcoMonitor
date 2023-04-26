@@ -1,1 +1,50 @@
-<h1>CONTACT</h1>
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Inquinamento da Polveri Sottili in Veneto - Contatti</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+
+<body>
+    <header>
+        <h1 class="logo">Inquinamento da Polveri Sottili in Veneto</h1>
+        <nav>
+            <ul>
+                <li><a href="{{ url_for('home') }}">Home</a></li>
+                <li><a href="{{ url_for('about') }}">About</a></li>
+                <li class="active"><a href="{{ url_for('contact') }}">Contatti</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <h2>Contatti</h2>
+        <p>Per contattarci, compila il modulo sottostante o utilizza uno dei seguenti metodi:</p>
+        <ul>
+            <li><strong>Indirizzo:</strong> Via Roma, 123 - 00100 Roma (RM) Italia</li>
+            <li><strong>Telefono:</strong> +39 06 1234567</li>
+            <li><strong>Email:</strong> info@nomesito.com</li>
+        </ul>
+        <form action="#" method="post">
+            <label for="name">Nome:</label>
+            <input type="text" id="name" name="name" required>
+
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" required>
+
+            <label for="phone">Telefono:</label>
+            <input type="tel" id="phone" name="phone" required>
+
+            <label for="message">Messaggio:</label>
+            <textarea id="message" name="message" required></textarea>
+
+            <button type="submit">Invia</button>
+        </form>
+    </main>
+    <footer>
+        <p>&copy; 2023 - Progetto Flask</p>
+    </footer>
+</body>
+
+</html>
