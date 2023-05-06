@@ -1,4 +1,0 @@
-fastapi
-mysql-connector-python
-PyJWT
-pydantic

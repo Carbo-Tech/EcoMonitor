@@ -13,6 +13,7 @@
         <nav>
             <ul>
                 <li><a href="{{ url_for('home') }}">Home</a></li>
+                <li><a href="{{ url_for('graph') }}">Graph</a></li>
                 <li><a href="{{ url_for('about') }}">About</a></li>
                 <li><a href="{{ url_for('contact') }}">Contact</a></li>
             </ul>
@@ -33,10 +34,10 @@
             <tbody>
                 {% for riga in dati %}
                 <tr>
-                    <td>{{ riga[0] }}</td>
-                    <td>{{ riga[1].strftime('%Y-%m-%d %H:%M:%S') }}</td>
-                    <td>{{ riga[2] }}</td>
-                    <td>{{ riga[3] }}</td>
+                    <td>{{ riga["nome"] }}</td>
+                    <td>{{ riga["data"].strftime('%Y-%m-%d %H:%M:%S') }}</td>
+                    <td>{{ riga["tipoInquinante"] }}</td>
+                    <td>{{ riga["valore"] }}</td>
                 </tr>
                 {% endfor %}
             </tbody>

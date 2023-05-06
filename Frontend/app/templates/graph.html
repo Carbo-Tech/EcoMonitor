@@ -1,13 +1,16 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>About - Inquinamento da Polveri Sottili in Veneto</title>
+    <title>Inquinamento da Polveri Sottili in Veneto</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/style.css') }}">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.4/Chart.js"></script>
 </head>
 
 <body>
+    
+
     <header>
         <h1 class="logo">Inquinamento da Polveri Sottili in Veneto</h1>
         <nav>
@@ -20,14 +23,13 @@
         </nav>
     </header>
     <main>
-        <h2>About</h2>
-        <p>Questa pagina è stata creata come parte di un progetto su Flask per la visualizzazione dei dati sull'inquinamento da polveri sottili in Veneto. I dati sono forniti dall'ARPAV e sono aggiornati ogni ora.</p>
-        <p>Il progetto è stato realizzato da [Inserire il nome del team] come parte del corso di Web Programming presso l'Università di [Inserire il nome dell'Università].</p>
-        <p>Per maggiori informazioni sui dati e sul progetto, contattare [Inserire l'indirizzo email del team].</p>
+        <canvas id="myChart" style="height: 370px; width: 100%;"></canvas>
     </main>
     <footer>
         <p>&copy; 2023 - Progetto Flask</p>
     </footer>
+    
+    <script src="{{ url_for('static', filename='js/graph.js') }}"></script>
 </body>
 
 </html>
