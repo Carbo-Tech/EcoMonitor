@@ -6,24 +6,39 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/style.css') }}">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.4/Chart.js"></script>
+    <style>
+
+    </style>
 </head>
 
 <body>
-    
-
     <header>
         <h1 class="logo">Inquinamento da Polveri Sottili in Veneto</h1>
         <nav>
             <ul>
                 <li><a href="{{ url_for('home') }}">Home</a></li>
                 <li><a href="{{ url_for('graph') }}">Graph</a></li>
+                
+                <li><a href="{{ url_for('stationsmap') }}">Map</a></li>
+
                 <li><a href="{{ url_for('about') }}">About</a></li>
                 <li><a href="{{ url_for('contact') }}">Contact</a></li>
             </ul>
         </nav>
     </header>
-    <main>
-        <canvas id="myChart" style="height: 370px; width: 100%;"></canvas>
+    <main >
+        <div id="selection" >
+            <select id="stations">
+                <option value="" selected disabled hidden>Choose Station</option>
+            </select>
+            <select id="pollutants" disabled>
+                <option value="" selected disabled hidden>Choose Pollutant</option>
+            </select>
+        </div>
+        <div class="chart-container" style="position: relative; height:40vh; width:80vw">
+            <canvas id="myChart"></canvas>
+        </div>
+         
     </main>
     <footer>
         <p>&copy; 2023 - Progetto Flask</p>
@@ -31,5 +46,4 @@
     
     <script src="{{ url_for('static', filename='js/graph.js') }}"></script>
 </body>
-
 </html>
