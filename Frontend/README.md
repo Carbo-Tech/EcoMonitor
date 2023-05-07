@@ -1,34 +1,101 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# Air Quality APIs
+This repository contains three APIs that allow users to query data related to air quality. The APIs are:
 
-## Getting Started
+- `/api/v1/stations`
+- `/api/v1/stations/{station}/pollutants`
+- `/api/v1/stations/{station}/pollutants/{pollutant}`
+## Usage    
+To use the APIs, make an HTTP requests to the appropriate URL. Here are some examples:
 
-First, run the development server:
+`/api/v1/stations`
 
-```bash
-npm run dev
-# or
-yarn dev
+This API returns a list of air quality monitoring stations.
+
+#### example request
+
+```
+GET /api/v1/stations HTTP/1.1
+Host: example.com
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+#### Example response
 
-You can start editing the page by modifying `pages/index.tsx`. The page auto-updates as you edit the file.
+```
+HTTP/1.1 200 OK
+Content-Type: application/json
 
-[API routes](https://nextjs.org/docs/api-routes/introduction) can be accessed on [http://localhost:3000/api/hello](http://localhost:3000/api/hello). This endpoint can be edited in `pages/api/hello.ts`.
+[
+  {
+    "lat": 45.05560684,
+    "lon": 12.03500652,
+    "nome": "Adria"
+  },
+  {
+    "lat": 45.60152817,
+    "lon": 11.90351582,
+    "nome": "Alta Padovana"
+  },
+  ...
+]
+```
+`/api/v1/stations/{station}/pollutants`
+This API returns a list of pollutants measured at a given station.
 
-The `pages/api` directory is mapped to `/api/*`. Files in this directory are treated as [API routes](https://nextjs.org/docs/api-routes/introduction) instead of React pages.
+#### Example request
+```
+GET /api/v1/stations/Alta%20Padovana/pollutants HTTP/1.1
+Host: example.com
+```
+#### Example response
+```HTTP/1.1 200 OK
+Content-Type: application/json
 
-## Learn More
+[
+  "Ozono",
+  "pm10"
+]
+```
 
-To learn more about Next.js, take a look at the following resources:
+```/api/v1/stations/{station}/pollutants/{pollutant}```
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+This API returns a list of air quality measurements for a given station and pollutant.
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+#### Example request
+```
+GET /api/v1/stations/Belluno%20Città/pollutants/ozono?orderby=data&limit=10&offset=0 HTTP/1.1
+Host: example.com
+```
+#### Example response
 
-## Deploy on Vercel
+```
+HTTP/1.1 200 OK
+Content-Type: application/json
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+[
+    {
+    "codseqst": "500000068",
+    "comune": "Belluno",
+    "data": "Tue, 06 Apr 2021 08:10:01 GMT",
+    "lat": 46.14192581,
+    "localita": "Belluno Citt\u00e0",
+    "lon": 12.21760273,
+    "nome": "Belluno Citt\u00e0",
+    "provincia": "Be",
+    "tipoInquinante": "ozono",
+    "valore": 46.508
+  },
+  {
+    "codseqst": "500000068",
+    "comune": "Belluno",
+    "data": "Tue, 06 Apr 2021 09:10:01 GMT",
+    "lat": 46.14192581,
+    "localita": "Belluno Citt\u00e0",
+    "lon": 12.21760273,
+    "nome": "Belluno Citt\u00e0",
+    "provincia": "Be",
+    "tipoInquinante": "ozono",
+    "valore": 79.8516
+  },
+  ...
+]
+```
