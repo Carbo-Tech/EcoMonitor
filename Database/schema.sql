@@ -1,13 +1,13 @@
--- MariaDB dump 10.19  Distrib 10.4.22-MariaDB, for Win64 (AMD64)
+-- MySQL dump 10.13  Distrib 8.0.32, for Linux (x86_64)
 --
 -- Host: localhost    Database: edciv
 -- ------------------------------------------------------
--- Server version	10.4.22-MariaDB
+-- Server version	8.0.32
 
 /*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
 /*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
 /*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
-/*!40101 SET NAMES utf8mb4 */;
+/*!50503 SET NAMES utf8mb4 */;
 /*!40103 SET @OLD_TIME_ZONE=@@TIME_ZONE */;
 /*!40103 SET TIME_ZONE='+00:00' */;
 /*!40014 SET @OLD_UNIQUE_CHECKS=@@UNIQUE_CHECKS, UNIQUE_CHECKS=0 */;
@@ -21,7 +21,7 @@
 
 DROP TABLE IF EXISTS `rilevazioni`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!40101 SET character_set_client = utf8 */;
+/*!50503 SET character_set_client = utf8mb4 */;
 CREATE TABLE `rilevazioni` (
   `codseqst` varchar(12) NOT NULL,
   `data` datetime NOT NULL,
@@ -29,7 +29,7 @@ CREATE TABLE `rilevazioni` (
   `valore` float(11,4) DEFAULT NULL,
   PRIMARY KEY (`codseqst`,`data`,`tipoInquinante`),
   CONSTRAINT `rilevazioni_ibfk_1` FOREIGN KEY (`codseqst`) REFERENCES `stazioni` (`codseqst`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb3;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -48,7 +48,7 @@ UNLOCK TABLES;
 
 DROP TABLE IF EXISTS `stazioni`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!40101 SET character_set_client = utf8 */;
+/*!50503 SET character_set_client = utf8mb4 */;
 CREATE TABLE `stazioni` (
   `codseqst` varchar(12) NOT NULL,
   `nome` varchar(20) NOT NULL,
@@ -58,7 +58,7 @@ CREATE TABLE `stazioni` (
   `lat` float(10,8) NOT NULL,
   `lon` float(10,8) NOT NULL,
   PRIMARY KEY (`codseqst`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb3;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -67,9 +67,13 @@ CREATE TABLE `stazioni` (
 
 LOCK TABLES `stazioni` WRITE;
 /*!40000 ALTER TABLE `stazioni` DISABLE KEYS */;
-INSERT INTO `stazioni` VALUES ('500000016','Conegliano','Conegliano','Conegliano','Tr',45.88964844,12.30706215),('500000020','MansuÃ©','Mansue','Mansue\'','Tr',45.83690262,12.51021290),('500000021','TV Via Lancieri','Treviso-via Lancieri N.','Treviso','Tr',45.67179871,12.23771381),('500000068','Belluno CittÃ ','Belluno CittÃ ','Belluno','Be',46.14192581,12.21760273),('500000069','Area Feltrina','Feltre Via Colombo','Feltre','Be',46.03127670,11.90661621),('500000073','Rovigo Borsea','Borsea','Rovigo','Ro',45.03881073,11.79015255),('500000077','Adria','Adria','Rovigo','Ro',0.00000000,0.00000000),('500000079','Rovigo Centro','Rovigo Centro','Rovigo','Ro',45.07383347,11.78246975),('500000082','Badia Polesine-Villa','M M 11 ROVIGO','Badia Polesine','Ro',45.10401917,11.55265236),('500000099','Quartiere Italia','VI - Quartiere Italia','Vicenza','Vi',45.55964279,11.53874493),('500000100','Montebello','Montebello Nord','Montebello Vicentino','Vi',45.46547699,11.38625240),('500000103','Schio','Schio','Schio','Vi',45.71353531,11.36762714),('500000106','Bassano','Bassano del Grappa','Bassano Del Grappa','Vi',45.75942993,11.73587036),('500000116','Legnago','Legnago','Legnago','Ve',45.18257523,11.31052303),('500000120','San Bonifacio','S. Bonifacio','San Bonifacio','Ve',45.39886475,11.28525543),('500000134','Verona - C.so Milano','Verona - C.so Milano','Verona','Ve',45.44440460,10.96300793),('500000141','Sacca Fisola','VE S. Fisola','Venezia','Ve',45.42837524,12.31290531),('500000149','San DonÃ Â  di Piave','S.Dona Piave','San Dona\' Di Piave','Ve',45.62908554,12.59043121),('500000156','VE Parco Bissuola','Parco Bissuola','Venezia','Ve',45.49819183,12.26122189),('500000197','PD Mandria','PD Mandria','Padova','Pa',45.37093735,11.84090519),('500000200','PD Granze','PD Granze','Padova','Pa',45.37754440,11.94004059),('500015004','Pieve di Alpago','Pieve di Alpago','(pieve D\'alpago Fino Al 22/02/2016)','Be',46.16250610,12.36110687),('500015029','Chiampo','Chiampo, Via dei Laghi','Chiampo','Vi',45.53645706,11.29369545),('500015304','Cima Ekar','Asiago','Asiago','Vi',45.84869766,11.56905079),('500015645','San Felice','VI - San Felice','Vicenza','Vi',45.54502106,11.53325653),('500015821','Boscochiesanuova','Boscochiesanuova','Verona','Ve',45.58921814,11.03695011),('500021732','VE Via Tagliamento','ME V. Tagliamento','Venezia','Ve',45.48958588,12.21754551),('500021765','VE Via Beccaria','VE - Via Beccaria','Venezia','Ve',45.47459793,12.21974945),('500021785','PD Arcella','Arcella Guido Reni','Padova','Pa',45.43285751,11.88971710),('500021960','Este','Este Stazie Bragadine','Este','Pa',45.22700119,11.66622639),('500021975','Parco Colli Euganei','Cinto Euganeo','Cinto Euganeo','Pa',45.28936005,11.64235783),('500022612','Alta Padovana','Carrello - S.Giustina in Colle','Santa Giustina In Colle','Pa',45.60152817,11.90351582),('500022715','Ferrovieri','VI - Ferrovieri','Vicenza','Vi',45.53221130,11.52219200),('500023627','VE Malcontenta','VE - Malcontenta','Venezia','Ve',45.43827438,12.20554638),('500031115','VR-Giarol Grande','VR-Giarol Grande','Verona','Ve',0.00000000,0.00000000),('500032515','VE - Rio Novo','VE - Rio Novo','Venezia','Ve',100.00000000,100.00000000);
+INSERT INTO `stazioni` VALUES ('500000016','Conegliano','Conegliano','Conegliano','Tr',45.88964844,12.30706215),('500000020','Mansuè','Mansue','Mansue\'','Tr',45.83690262,12.51021290),('500000021','TV Via Lancieri','Treviso-via Lancieri N.','Treviso','Tr',45.67179871,12.23771381),('500000068','Belluno Città','Belluno Città','Belluno','Be',46.14192581,12.21760273),('500000069','Area Feltrina','Feltre Via Colombo','Feltre','Be',46.03127670,11.90661621),('500000073','Rovigo Borsea','Borsea','Rovigo','Ro',45.03881073,11.79015255),('500000077','Adria','Adria','Rovigo','Ro',45.05560684,12.03500652),('500000079','Rovigo Centro','Rovigo Centro','Rovigo','Ro',45.07383347,11.78246975),('500000082','Badia Polesine-Villa','M M 11 ROVIGO','Badia Polesine','Ro',45.10401917,11.55265236),('500000099','Quartiere Italia','VI - Quartiere Italia','Vicenza','Vi',45.55964279,11.53874493),('500000100','Montebello','Montebello Nord','Montebello Vicentino','Vi',45.46547699,11.38625240),('500000103','Schio','Schio','Schio','Vi',45.71353531,11.36762714),('500000106','Bassano','Bassano del Grappa','Bassano Del Grappa','Vi',45.75942993,11.73587036),('500000116','Legnago','Legnago','Legnago','Ve',45.18257523,11.31052303),('500000120','San Bonifacio','S. Bonifacio','San Bonifacio','Ve',45.39886475,11.28525543),('500000134','Verona - C.so Milano','Verona - C.so Milano','Verona','Ve',45.44440460,10.96300793),('500000141','Sacca Fisola','VE S. Fisola','Venezia','Ve',45.42837524,12.31290531),('500000149','San Donà di Piave','S.Dona Piave','San Dona\' Di Piave','Ve',45.62908554,12.59043121),('500000156','VE Parco Bissuola','Parco Bissuola','Venezia','Ve',45.49819183,12.26122189),('500000197','PD Mandria','PD Mandria','Padova','Pa',45.37093735,11.84090519),('500000200','PD Granze','PD Granze','Padova','Pa',45.37754440,11.94004059),('500015004','Pieve di Alpago','Pieve di Alpago','(pieve D\'alpago Fino Al 22/02/2016)','Be',46.16250610,12.36110687),('500015029','Chiampo','Chiampo, Via dei Laghi','Chiampo','Vi',45.53645706,11.29369545),('500015304','Cima Ekar','Asiago','Asiago','Vi',45.84869766,11.56905079),('500015645','San Felice','VI - San Felice','Vicenza','Vi',45.54502106,11.53325653),('500015821','Boscochiesanuova','Boscochiesanuova','Verona','Ve',45.58921814,11.03695011),('500021732','VE Via Tagliamento','ME V. Tagliamento','Venezia','Ve',45.48958588,12.21754551),('500021765','VE Via Beccaria','VE - Via Beccaria','Venezia','Ve',45.47459793,12.21974945),('500021785','PD Arcella','Arcella Guido Reni','Padova','Pa',45.43285751,11.88971710),('500021960','Este','Este Stazie Bragadine','Este','Pa',45.22700119,11.66622639),('500021975','Parco Colli Euganei','Cinto Euganeo','Cinto Euganeo','Pa',45.28936005,11.64235783),('500022612','Alta Padovana','Carrello - S.Giustina in Colle','Santa Giustina In Colle','Pa',45.60152817,11.90351582),('500022715','Ferrovieri','VI - Ferrovieri','Vicenza','Vi',45.53221130,11.52219200),('500023627','VE Malcontenta','VE - Malcontenta','Venezia','Ve',45.43827438,12.20554638),('500031115','VR-Giarol Grande','VR-Giarol Grande','Verona','Ve',45.43347168,11.02956390),('500032515','VE - Rio Novo','VE - Rio Novo','Venezia','Ve',45.43611908,12.31516647);
 /*!40000 ALTER TABLE `stazioni` ENABLE KEYS */;
 UNLOCK TABLES;
+
+--
+-- Dumping routines for database 'edciv'
+--
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
 
 /*!40101 SET SQL_MODE=@OLD_SQL_MODE */;
@@ -80,4 +84,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2023-04-17 10:36:42
+-- Dump completed on 2023-05-07 14:26:50
