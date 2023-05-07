@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>About - Inquinamento da Polveri Sottili in Veneto</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/style.css') }}">
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.3/dist/leaflet.css" />
+  <style>
+    #map {
+      height: 500px;
+    }
+  </style>
+
+</head>
+
+<body>
+  <script src="https://unpkg.com/leaflet@1.9.3/dist/leaflet.js"></script>
+
+  <header>
+    <h1 class="logo">Inquinamento da Polveri Sottili in Veneto</h1>
+    <nav>
+      <ul>
+        <li><a href="{{ url_for('home') }}">Home</a></li>
+        <li><a href="{{ url_for('graph') }}">Graph</a></li>
+        <li><a href="{{ url_for('stationsmap') }}">Map</a></li>
+        <li><a href="{{ url_for('about') }}">About</a></li>
+        <li><a href="{{ url_for('contact') }}">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+  <main>
+    <div id="map"></div>
+
+  </main>
+  <script src="{{ url_for('static', filename='js/map.js') }}"></script>
+
+  <footer>
+    <p>&copy; 2023 - Progetto Flask</p>
+  </footer>
+</body>
+
+</html>
