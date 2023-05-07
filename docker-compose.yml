@@ -19,6 +19,12 @@ services:
       - external
       - internal
       - web
+    environment:
+      DB_HOST: eco_monitor_mysql
+      DB_USER: root
+      DB_PASSWORD: passwordsicura
+      DB_NAME: edciv
+
 
   backend:
     build:
@@ -61,6 +67,8 @@ services:
     networks:
       - web
       - internal
+    
+
 
 networks:
   web:
