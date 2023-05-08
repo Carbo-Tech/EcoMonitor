@@ -49,7 +49,6 @@ def fetch_one_dict(cursor):
 
 @app.route('/', methods=['GET'])
 def home():
-
     return render_template('index.html')
 
 
@@ -67,9 +66,11 @@ def about():
 def contact():
     return render_template('contact.html')
 
+
 @app.route('/stationsmap', methods=['GET'])
 def stationsmap():
     return render_template('map.html')
+
 
 @app.route('/api/v1/stations', methods=['GET'])
 def get_stations():
@@ -84,9 +85,9 @@ def get_stations():
         print("MySQL connection is closed")
         if not data:
             return jsonify({"error": "No stations found"}), 404
-        return jsonify(data),200
+        return jsonify(data), 200
     except:
-        return jsonify({"error": "Unable to fetch stations"}),500
+        return jsonify({"error": "Unable to fetch stations"}), 500
 
 
 @app.route('/api/v1/stations/<string:station>/pollutants', methods=['GET'])
@@ -103,9 +104,9 @@ def get_pollutants(station):
         print("MySQL connection is closed")
         if not data:
             return jsonify({"error": "No pollutants found for the given station"}), 404
-        return jsonify(data),200
+        return jsonify(data), 200
     except:
-        return jsonify({"error": "Unable to fetch pollutants for this station"}),500
+        return jsonify({"error": "Unable to fetch pollutants for this station"}), 500
 
 
 @app.route('/api/v1/stations/<string:station>/pollutants/<string:pollutant>', methods=['GET'])
@@ -136,13 +137,11 @@ def get_data(station, pollutant):
         if not data:
             return jsonify({"error": "No data found for the given station and pollutant"}), 404
 
-        return jsonify(data),200
+        return jsonify(data), 200
 
     except Exception as e:
         print(f"Error: {e}")
         return jsonify({"error": "Internal server error"}), 500
-
-
 
 
 if __name__ == '__main__':
