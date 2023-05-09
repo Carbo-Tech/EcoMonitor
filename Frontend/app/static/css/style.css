@@ -143,63 +143,6 @@ main label {
   margin-bottom: 1rem;
 }
 
-.table {
-  background-color: #444;
-  color: #fff;
-  border-collapse: collapse;
-  width: 100%;
-  max-width: 800px;
-  margin: 2rem auto;
-}
-
-th {
-  padding: 0.5rem;
-  text-align: left;
-  border-bottom: 2px solid #fff;
-}
-
-td {
-  padding: 0.5rem;
-  border-bottom: 1px solid #999;
-}
-
-.pagination {
-  display: flex;
-  justify-content: center;
-  margin: 20px 0;
-}
-
-.pagination__button {
-  display: inline-block;
-  padding: 5px 10px;
-  margin: 0 5px;
-  border-radius: 5px;
-  background-color: #444444;
-  color: #dcdcdc;
-}
-
-.pagination__button:hover,
-.pagination__button.active {
-  background-color: #1a1a1a;
-}
-
-.pagination__current-page {
-  display: inline-block;
-  margin: 0 5px;
-  color: #dcdcdc;
-  font-weight: bold;
-  font-size: 1.2em;
-}
-
-.pagination__button:disabled {
-  opacity: 0.5;
-  cursor: default;
-}
-
-.pagination__button[disabled]:hover {
-  background-color: #444444;
-  cursor: default;
-}
 
 p.source {
   margin: 10px;
@@ -223,18 +166,6 @@ footer p {
   margin: 0;
 }
 
-/* Caption styles */
-caption {
-  font-size: 1.2em;
-  font-weight: bold;
-  margin-bottom: 10px;
-  text-align: center;
-  text-transform: uppercase;
-  letter-spacing: 2px;
-  background-color: #333333;
-  color: #dcdcdc;
-  padding: 10px;
-}
 
 /* Contatti styles */
 main ul {

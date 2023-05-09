@@ -58,6 +58,16 @@ function paginateTable(pageSize) {
         currentPage--;
         showPage(currentPage);
         currentPageSpan.textContent = currentPage + 1;
+        currentPageSpan.classList.remove("fade-in");
+        currentPageSpan.classList.add("fade-out", "slide-out-right");
+        previousButton.classList.add("slide-out-left");
+        nextButton.classList.remove("slide-out-left");
+        setTimeout(() => {
+          currentPageSpan.classList.remove("fade-out");
+          currentPageSpan.classList.add("fade-in", "slide-in-left");
+          previousButton.classList.remove("slide-out-left");
+          nextButton.classList.remove("slide-out-right");
+        }, 300);
       }
     });
 
