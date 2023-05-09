@@ -26,28 +26,7 @@ services:
       DB_NAME: edciv
 
 
-  backend:
-    build:
-      context: Backend
-      target: builder
-
-    ports:
-      - 3307:443
-    container_name: eco_monitor_backend
-    hostname: eco_monitor_backend
-    environment:
-      DATABASE: "edciv"
-      USER_DB: "root"
-      PASSWORD_DB: "passwordsicura"
-      PORT: 443
-    restart: "no"
-    volumes:
-      - ./Backend/app:/app
-    networks:
-      - web
-      - external
-      - internal
-
+  
 
   mysql:
     hostname: eco_monitor_mysql
