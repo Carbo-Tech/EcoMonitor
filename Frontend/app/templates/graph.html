@@ -6,6 +6,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/style.css') }}">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.4/Chart.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.1/moment.min.js"></script>
+
     <style>
 
     </style>
@@ -35,7 +37,7 @@
                 <option value="" selected disabled hidden>Choose Pollutant</option>
             </select>
         </div>
-        <div class="chart-container" style="position: relative; height:40vh; width:80vw">
+        <div class="chart-container" style="position: relative; height:50vh; width:90%;margin: auto; text-align: center;">
             <canvas id="myChart"></canvas>
         </div>
          

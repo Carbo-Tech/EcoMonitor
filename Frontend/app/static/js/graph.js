@@ -2,7 +2,10 @@ function fetchData(station, pollutant) {
     return fetch(`/api/v1/stations/${station}/pollutants/${pollutant}`)
         .then(response => response.json())
         .then(data => {
-            const labels = data.map(item => item.data);
+            const labels = data.map(item => {
+                const date = new Date(item.data);
+                return date.toISOString()
+            });
             const values = data.map(item => item.valore);
             return { labels, values };
         })
@@ -10,6 +13,7 @@ function fetchData(station, pollutant) {
             console.error('Error:', error);
         });
 }
+
 
 function createGraph(labels, values) {
     if(window.myChart instanceof Chart)
@@ -28,7 +32,8 @@ function createGraph(labels, values) {
                 backgroundColor: 'transparent',
                 borderColor: 'white',
                 borderWidth: 2,
-                pointBackgroundColor: 'white'
+                pointBackgroundColor: 'white',
+                pointRadius: 0
             }]
         },
         options: {
@@ -47,6 +52,11 @@ function createGraph(labels, values) {
                     scaleLabel: {
                         display: true,
                         labelString: 'Date'
+                    },
+                    ticks: {
+                        callback: function(value, index, values) {
+                            return moment(value).format('YY/MM/DD');
+                        }
                     }
                 }],
                 yAxes: [{
@@ -59,12 +69,15 @@ function createGraph(labels, values) {
                         beginAtZero: true
                     }
                 }]
+            },
+            tooltips: {
+                mode: 'nearest',
+                intersect: false
             }
         }
     });
-
-
 }
+
 
 function fetchPollutants(station) {
     return fetch(`/api/v1/stations/${station}/pollutants`)

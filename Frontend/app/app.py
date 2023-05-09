@@ -128,14 +128,14 @@ def get_data(station, pollutant):
                 "limit": request.args.get('limit', default=sys.maxsize, type=int),
             }
             cursor.execute(sql, params)
-            print(cursor.statement)
             data = fetch_all_dict(cursor)
+            print(data)
 
         connection.close()
 
         if not data:
             return jsonify({"error": "No data found for the given station and pollutant"}), 404
-
+            
         return jsonify(data),200
 
     except Exception as e:

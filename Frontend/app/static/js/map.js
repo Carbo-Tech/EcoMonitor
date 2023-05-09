@@ -26,7 +26,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
       // Add the points to the map
       for (var i = 0; i < coordinates.length; i++) {
-        var marker = L.marker(coordinates[i], {title: names[i]}).addTo(map);
+        let marker = L.marker(coordinates[i], {title: names[i]}).addTo(map);
         marker.on('click', function(e) {
           alert(e.target.options.title);
         });
@@ -34,6 +34,7 @@ document.addEventListener('DOMContentLoaded', function() {
           marker.bindTooltip(e.target.options.title).openTooltip();
         });
         marker.on('mouseout', function(e) {
+          console.log(marker)
           marker.unbindTooltip();
         });
       }
