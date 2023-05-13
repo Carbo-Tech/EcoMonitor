@@ -2,18 +2,43 @@ function fetchData(station, pollutant) {
     return fetch(`/api/v1/stations/${station}/pollutants/${pollutant}`)
         .then(response => response.json())
         .then(data => {
-            const labels = data.map(item => item.data);
+            const labels = data.map(item => {
+                const date = new Date(item.data);
+                return date.toISOString()
+            });
             const values = data.map(item => item.valore);
-            return { labels, values };
+
+            const redLabels = [];
+            const redValues = [];
+            const valuesCopy = [...values];
+            for (let i = 0; i < values.length; i += 7) {
+                const weekValues = valuesCopy.slice(i, i + 7);
+                const weekAverage = weekValues.reduce((acc, val) => acc + val, 0) / weekValues.length;
+
+                for (let j = i; j < i + 7; j++) {
+                    if (j === i + 3) {
+                        redValues.push(weekAverage);
+                        redLabels.push(labels[j]);
+                    } else {
+                        redValues.push(null);
+                        redLabels.push(labels[j]);
+                    }
+                }
+            }
+
+
+            return { labels, values, redLabels, redValues };
         })
         .catch(error => {
             console.error('Error:', error);
         });
 }
 
-function createGraph(labels, values) {
-    if(window.myChart instanceof Chart)
-    {
+
+
+function createGraph(labels, values, redLabels, redValues) {
+
+    if (window.myChart instanceof Chart) {
         window.myChart.destroy();
     }
     const ctx = document.getElementById('myChart').getContext('2d');
@@ -21,19 +46,45 @@ function createGraph(labels, values) {
     window.myChart = new Chart(ctx, {
         type: 'line',
         data: {
-            labels: labels,
-            datasets: [{
-                label: 'Value',
-                data: values,
-                backgroundColor: 'transparent',
-                borderColor: 'white',
-                borderWidth: 2,
-                pointBackgroundColor: 'white'
-            }]
+            labels: labels.map(label => new Date(label).toLocaleString('en-GB', {
+                day: '2-digit',
+                month: '2-digit',
+                year: '2-digit',
+                hour: '2-digit',
+                minute: '2-digit',
+            })),
+            datasets: [
+                {
+                    label: 'Weekly Average',
+                    data: redValues,
+                    spanGaps: true,
+                    zIndex: 0,
+                    backgroundColor: 'transparent',
+                    borderColor: 'RGB(255, 0, 0)',
+                    borderWidth: 2,
+                    pointBackgroundColor: 'RGB(255, 0, 0)',
+                    pointRadius: 0,
+                    fill: "end",
+                    labels: redLabels
+                },
+                {
+                    label: 'Value',
+                    data: values,
+                    spanGaps: true,
+
+                    backgroundColor: 'transparent',
+                    borderColor: 'RGB(211, 211, 211)',
+                    borderWidth: 2,
+                    pointBackgroundColor: 'RGB(211, 211, 211)',
+                    pointRadius: 0,
+                    fill: true,
+                    zIndex: 1,
+                }
+            ]
         },
         options: {
             legend: {
-                display: false
+                display: true
             },
             responsive: true,
             maintainAspectRatio: false,
@@ -42,14 +93,19 @@ function createGraph(labels, values) {
                 text: 'Line Graph'
             },
             scales: {
-                xAxes: [{
-                    display: true,
+                x: {
+                    type: 'category',
                     scaleLabel: {
                         display: true,
                         labelString: 'Date'
+                    },
+                    ticks: {
+                        callback: function (value, index, values) {
+                            return value;
+                        }
                     }
-                }],
-                yAxes: [{
+                },
+                y: {
                     display: true,
                     scaleLabel: {
                         display: true,
@@ -58,12 +114,15 @@ function createGraph(labels, values) {
                     ticks: {
                         beginAtZero: true
                     }
-                }]
+                }
+            },
+            tooltips: {
+                mode: 'nearest',
+                intersect: false,
+
             }
         }
     });
-
-
 }
 
 function fetchPollutants(station) {
@@ -84,7 +143,7 @@ function fetchStations() {
 }
 function displayGraph(station, pollutant) {
     fetchData(station, pollutant)
-        .then(({ labels, values }) => createGraph(labels, values));
+        .then(({ labels, values, redLabels, redValues }) => createGraph(labels, values, redLabels, redValues));
 }
 
 function populateStations() {
