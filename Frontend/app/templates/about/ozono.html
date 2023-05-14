@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>About - Inquinamento da Polveri Sottili in Veneto</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+
+<body>
+  <header>
+    <h1 class="logo">Inquinamento da Polveri Sottili in Veneto</h1>
+    <nav>
+      <ul>
+        <li><a href="{{ url_for('home') }}">Home</a></li>
+        <li><a href="{{ url_for('graph') }}">Graph</a></li>
+        <li><a href="{{ url_for('stationsmap') }}">Map</a></li>
+        <li><a href="{{ url_for('about') }}">About</a></li>
+        <li><a href="{{ url_for('contact') }}">Contact</a></li>
+      </ul>
+    </nav>
+    <nav class="mini">
+      <ul>
+        <li><a href="{{ url_for('arpav') }}">ARPAV</a></li>
+        <li><a href="{{ url_for('pm') }}">Particulate Matter</a></li>
+        <li><a href="{{ url_for('ozono') }}">Ozono</a></li>
+        <li><a href="{{ url_for('conclusione') }}">Conclusione</a></li>
+      </ul>
+    </nav>
+  </header>
+  <main>
+		<h1>Ozono</h1>
+		<p>L'ozono è un gas composto da tre atomi di ossigeno (O3) che si forma naturalmente nell'atmosfera terrestre, ma può anche essere prodotto dall'attività umana. <br> In particolare, l'ozono è un inquinante atmosferico che si forma attraverso la reazione tra gli ossidi di azoto (NOx) e i composti organici volatili (COV) in presenza di luce solare.</p>
+		<p>L'ozono è noto per i suoi effetti negativi sulla salute umana e sull'ambiente. <br> In particolare, l'esposizione prolungata all'ozono può provocare problemi respiratori come l'asma e la bronchite, malattie cardiovascolari e riduzione della funzione polmonare. L'ozono può anche causare danni all'ambiente, come la riduzione della resa delle colture e la diminuzione della biodiversità.</p>
+		<p>Nella regione del Veneto, in Italia, i livelli di ozono nell'aria sono generalmente superiori ai limiti di sicurezza stabiliti dall'Unione Europea nei mesi estivi, in particolare nella provincia di Verona. <br> Durante questo periodo, i livelli di ozono nell'aria possono raggiungere picchi massimi, con conseguente aumento del rischio per la salute umana.</p>
+		<p>Per ridurre l'esposizione all'ozono e mitigare i suoi effetti negativi, è fondamentale adottare misure a livello locale, nazionale e internazionale. Le azioni possono comprendere la riduzione delle emissioni di NOx e COV attraverso politiche che incentivino l'uso di trasporti pubblici, la promozione di veicoli a basso impatto ambientale e la riduzione dell'uso di prodotti chimici ad alto contenuto di COV.</p>
+		<p>Inoltre, è importante che i livelli di ozono nell'aria siano monitorati costantemente e che le informazioni sulla qualità dell'aria siano diffuse ai cittadini, per permettere loro di adottare comportamenti consapevoli e contribuire alla prevenzione dell'inquinamento atmosferico. Ciò può aiutare a proteggere la salute umana e l'ambiente, garantendo un futuro sostenibile per tutti.</p>
+		
+	</main>
+	<footer>
+		<p>Copyright © 2023</p>
+	</footer>
+</body>
+</html>

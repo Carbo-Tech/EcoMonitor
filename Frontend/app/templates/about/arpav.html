@@ -1,21 +1,35 @@
 <!DOCTYPE html>
 <html>
+
 <head>
-	<meta charset="utf-8">
-	<title>ARPAV</title>
-	<link rel="stylesheet" type="text/css" href="style.css">
+  <title>About - Inquinamento da Polveri Sottili in Veneto</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/style.css') }}">
 </head>
+
 <body>
-	<header>
-		<div class="logo">ARPAV</div>
-		<nav>
-			<ul>
-				<li><a href="#">Home</a></li>
-				<li><a href="#">Contatti</a></li>
-			</ul>
-		</nav>
-	</header>
-	<main>
+  <header>
+    <h1 class="logo">Inquinamento da Polveri Sottili in Veneto</h1>
+    <nav>
+      <ul>
+        <li><a href="{{ url_for('home') }}">Home</a></li>
+        <li><a href="{{ url_for('graph') }}">Graph</a></li>
+        <li><a href="{{ url_for('stationsmap') }}">Map</a></li>
+        <li><a href="{{ url_for('about') }}">About</a></li>
+        <li><a href="{{ url_for('contact') }}">Contact</a></li>
+      </ul>
+    </nav>
+    <nav class="mini">
+      <ul>
+        <li><a href="{{ url_for('arpav') }}">ARPAV</a></li>
+        <li><a href="{{ url_for('pm') }}">Particulate Matter</a></li>
+        <li><a href="{{ url_for('ozono') }}">Ozono</a></li>
+        <li><a href="{{ url_for('conclusione') }}">Conclusione</a></li>
+      </ul>
+    </nav>
+  </header>
+  <main>
 		<h1>ARPAV</h1>
 		<p>L'Agenzia Regionale per la Prevenzione e Protezione Ambientale del Veneto (ARPAV) è l'ente preposto alla tutela dell'ambiente e della salute pubblica nella regione Veneto. Fondata nel 1992, ARPAV ha il compito di monitorare la qualità dell'aria, dell'acqua e del suolo, nonché di fornire servizi di consulenza tecnica e di supporto alle autorità locali e regionali.</p>
 		<p>ARPAV raccoglie dati su inquinanti atmosferici come il particolato, l'ozono e le emissioni di gas serra, e li utilizza per valutare la qualità dell'aria nelle diverse aree del Veneto. L'agenzia dispone di una rete di stazioni fisse e mobili di monitoraggio dell'aria, che consentono di raccogliere dati in tempo reale su diversi parametri ambientali.</p>
@@ -24,15 +38,7 @@
 		<p>Inoltre, ARPAV collabora con altre agenzie e istituzioni in Italia e all'estero per promuovere la ricerca e lo sviluppo di tecnologie e strategie di controllo delle emissioni, al fine di ridurre l'inquinamento atmosferico e mitigare i suoi effetti sulla salute umana e sull'ambiente.</p>
 		<h2>Stazioni di monitoraggio dell'aria ARPAV</h2>
 		<p>Di seguito sono elencate alcune delle stazioni fisse di monitoraggio dell'aria ARPAV:</p>
-		<ul>
-			<li>1. Padova - Via Tiziano Aspetti</li>
-			<li>2. Venezia - Isola di San Pietro di Castello</li>
-			<li>3. Treviso - Via S. Bona</li>
-			<li>4. Belluno - Via Feltre</li>
-			<li>5. Verona - Via del Capitello</li>
-			<li>6. Rovigo - Via Vittorio Veneto</li>
-			<li>7. Vicenza - Via Lago di Fimon</li>
-		</ul>
+		
 	</main>
 	<footer>
 		<p>&copy; 2023</p>

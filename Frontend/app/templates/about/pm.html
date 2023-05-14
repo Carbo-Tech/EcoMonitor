@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>About - Inquinamento da Polveri Sottili in Veneto</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+
+<body>
+  <header>
+    <h1 class="logo">Inquinamento da Polveri Sottili in Veneto</h1>
+    <nav>
+      <ul>
+        <li><a href="{{ url_for('home') }}">Home</a></li>
+        <li><a href="{{ url_for('graph') }}">Graph</a></li>
+        <li><a href="{{ url_for('stationsmap') }}">Map</a></li>
+        <li><a href="{{ url_for('about') }}">About</a></li>
+        <li><a href="{{ url_for('contact') }}">Contact</a></li>
+      </ul>
+    </nav>
+    <nav class="mini">
+      <ul>
+        <li><a href="{{ url_for('arpav') }}">ARPAV</a></li>
+        <li><a href="{{ url_for('pm') }}">Particulate Matter</a></li>
+        <li><a href="{{ url_for('ozono') }}">Ozono</a></li>
+        <li><a href="{{ url_for('conclusione') }}">Conclusione</a></li>
+      </ul>
+    </nav>
+  </header>
+  <main>
+    <h1>Particulate Matter (PM)</h1>
+    <p>Il particulate matter (PM) è un problema serio che colpisce molti paesi in tutto il mondo, causando significativi
+      danni alla salute umana e all'ambiente. <br> Le particelle di PM possono essere di varie dimensioni, dalle
+      particelle più grandi, come PM10, alle particelle più piccole, come PM2,5, e persino alle particelle ultrafine.
+    </p>
+    <p>Le fonti di PM includono la combustione di carbone e combustibili fossili, le attività industriali, il traffico
+      veicolare, le attività agricole e il fuoco. <br> Le particelle di PM possono rimanere nell'aria per giorni o
+      persino settimane, e possono viaggiare per lunghe distanze, causando impatti sulla salute e sull'ambiente in molte
+      regioni.</p>
+    <p>Nel Veneto, oltre al PM10, l'Arpav monitora anche i livelli di PM2,5, che sono particolarmente preoccupanti
+      poiché possono penetrare ancora più profondamente nei polmoni rispetto al PM10. <br> Tuttavia, i dati attuali
+      mostrano che i livelli di PM2,5 nell'aria sono generalmente inferiori ai limiti di sicurezza stabiliti dall'Unione
+      Europea.</p>
+    <p>Per ridurre i livelli di PM nell'aria, è importante adottare misure come il controllo delle fonti di
+      inquinamento, l'uso di tecnologie più pulite, la promozione di mezzi di trasporto a basso impatto ambientale e la
+      riduzione del consumo di energia. <br> Inoltre, il monitoraggio continuo dei livelli di PM nell'aria e la
+      diffusione di informazioni sulla qualità dell'aria ai cittadini sono fondamentali per sensibilizzare sulla
+      necessità di adottare comportamenti sostenibili e ridurre gli impatti dell'inquinamento atmosferico sulla salute
+      umana e sull'ambiente.</p>
+    
+  </main>
+  <footer>
+    <p>Copyright © 2023</p>
+  </footer>
+</body>
+
+</html>

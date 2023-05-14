@@ -55,13 +55,47 @@ nav li {
 nav a {
   font-weight: bold;
   font-size: 1.2em;
-  color: #dcdcdc;
+  color: #e1e1e1;
   text-decoration: none;
   padding: 10px;
   transition: all 0.2s ease-in-out;
 }
 
 nav a:hover {
+  background-color: #4d4d4d;
+}
+nav.mini {
+  position: sticky;
+  top: 0;
+  z-index: 1;
+  background-color: #282828;
+  box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.2);
+}
+nav.mini ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 30px;
+  overflow: hidden;
+}
+
+nav.mini li {
+  margin: 0 5px;
+}
+
+nav.mini a {
+  font-weight: bold;
+  font-size: 1.2em;
+  color: #c2c2c2;
+  text-decoration: none;
+  padding: 10px;
+  transition: all 0.2s ease-in-out;
+}
+
+nav.mini a:hover {
   background-color: #4d4d4d;
 }
 

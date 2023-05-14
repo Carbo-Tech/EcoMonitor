@@ -6,6 +6,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/style.css') }}">
+  <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/table.css') }}">
   <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.3/dist/leaflet.css" />
   <style>
     #map {
@@ -32,7 +33,463 @@
   </header>
   <main>
     <div id="map"></div>
+    <table class="table">
+      <thead>
+        <tr>
+          <th>Prov</th>
+          <th>Comune</th>
+          <th>Nome stazione</th>
+          <th>LAT</th>
+          <th>LONG</th>
+          <th>Altitude</th>
+          <th>Class</th>
+          <th>Subclass</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>BL</td>
+          <td>Belluno</td>
+          <td>BL - Parco Citta' di Bologna</td>
+          <td>46,14193</td>
+          <td>12,21758</td>
+          <td>394</td>
+          <td>Fondo</td>
+          <td>Urbano</td>
+        </tr>
+        <tr>
+          <td>BL</td>
+          <td>Belluno</td>
+          <td>BL - La Cerva</td>
+          <td>46,14376</td>
+          <td>12,21279</td>
+          <td>403</td>
+          <td>Traffico</td>
+          <td>Urbano</td>
+        </tr>
+        <tr>
+          <td>BL</td>
+          <td>Feltre</td>
+          <td>Area Feltrina</td>
+          <td>46,03127</td>
+          <td>11,90675</td>
+          <td>295</td>
+          <td>Fondo</td>
+          <td>Suburbano</td>
+        </tr>
+        <tr>
+          <td>BL</td>
+          <td>Alpago</td>
+          <td>Pieve d'Alpago</td>
+          <td>46,16253</td>
+          <td>12,3613</td>
+          <td>612</td>
+          <td>Fondo</td>
+          <td>Rurale</td>
+        </tr>
+        <tr>
+          <td>BL</td>
+          <td>Falcade</td>
+          <td>Passo Valles</td>
+          <td>46,33971</td>
+          <td>11,80306</td>
+          <td>2035</td>
+          <td>Fondo</td>
+          <td>Rurale</td>
+        </tr>
+        <tr>
+          <td>PD</td>
+          <td>Padova</td>
+          <td>PD – Mandria</td>
+          <td>45,37101</td>
+          <td>11,84084</td>
+          <td>12</td>
+          <td>Fondo</td>
+          <td>Urbano</td>
+        </tr>
+        <tr>
+          <td>PD</td>
+          <td>Padova</td>
+          <td>PD – Arcella</td>
+          <td>45,43291</td>
+          <td>11,8897</td>
+          <td>12</td>
+          <td>Traffico</td>
+          <td>Urbano</td>
+        </tr>
+        <tr>
+          <td>PD</td>
+          <td>Padova</td>
+          <td>PD - Granze</td>
+          <td>45.37757</td>
+          <td>11.93996</td>
+          <td>9</td>
+          <td>Industriale</td>
+          <td>Urbano</td>
+        </tr>
+        <tr>
+          <td>PD</td>
+          <td>Santa Giustina in Colle</td>
+          <td>Alta Padovana</td>
+          <td>45.60158</td>
+          <td>11.90355</td>
+          <td>28</td>
+          <td>Fondo</td>
+          <td>Rurale</td>
+        </tr>
+        <tr>
+          <td>PD</td>
+          <td>Este</td>
+          <td>Este</td>
+          <td>45.22693</td>
+          <td>11.66618</td>
+          <td>11</td>
+          <td>Industriale</td>
+          <td>Suburbano</td>
+        </tr>
+        <tr>
+          <td>PD</td>
+          <td>Monselice</td>
+          <td>Monselice</td>
+          <td>45.23799</td>
+          <td>11.74409</td>
+          <td>7</td>
+          <td>Fondo</td>
+          <td>Urbano</td>
+        </tr>
+        <tr>
+          <td>PD</td>
+          <td>Cinto Euganeo</td>
+          <td>Parco Colli Euganei</td>
+          <td>45.28937</td>
+          <td>11.64239</td>
+          <td>13</td>
+          <td>Fondo</td>
+          <td>Rurale</td>
+        </tr>
+        <tr>
+          <td>PD</td>
+          <td>Tombolo</td>
+          <td>Tombolo</td>
+          <td>45.63916</td>
+          <td>11.81694</td>
+          <td>42</td>
+          <td>Industriale</td>
+          <td>Suburbano</td>
+        </tr>
+        <tr>
+          <td>RO</td>
+          <td>Adria</td>
+          <td>Adria</td>
+          <td>45.04583</td>
+          <td>12.06087</td>
+          <td>0</td>
+          <td>Fondo</td>
+          <td>Urbano</td>
+        </tr>
+        <tr>
+          <td>RO</td>
+          <td>Rovigo</td>
+          <td>RO - Largo Martiri</td>
+          <td>45.07387</td>
+          <td>11.78255</td>
+          <td>7</td>
+          <td>Traffico</td>
+          <td>Urbano</td>
+        </tr>
+        <tr>
+          <td>RO</td>
+          <td>Rovigo</td>
+          <td>RO – Borsea</td>
+          <td>45,03876</td>
+          <td>11,79015</td>
+          <td>4</td>
+          <td>Fondo</td>
+          <td>Urbano</td>
+        </tr>
+        <tr>
+          <td>RO</td>
+          <td>Badia Polesine</td>
+          <td>Badia Polesine</td>
+          <td>45,10408</td>
+          <td>11,55324</td>
+          <td>7</td>
+          <td>Fondo</td>
+          <td>Rurale</td>
+        </tr>
+        <tr>
+          <td>TV</td>
+          <td>Conegliano</td>
+          <td>Conegliano</td>
+          <td>45,88973</td>
+          <td>12,30712</td>
+          <td>62</td>
+          <td>Fondo</td>
+          <td>Urbano</td>
+        </tr>
+        <tr>
+          <td>TV</td>
+          <td>Mansue'</td>
+          <td>Mansue'</td>
+          <td>45,83694</td>
+          <td>12,51036</td>
+          <td>11</td>
+          <td>Fondo</td>
+          <td>Rurale</td>
+        </tr>
+        <tr>
+          <td>TV</td>
+          <td>Treviso</td>
+          <td>TV - Via Lancieri</td>
+          <td>45,67172</td>
+          <td>12,23781</td>
+          <td>15</td>
+          <td>Fondo</td>
+          <td>Urbano</td>
+        </tr>
+        <tr>
+          <td>TV</td>
+          <td>Treviso</td>
+          <td>TV - S. Agnese</td>
+          <td>45,6588</td>
+          <td>12,21618</td>
+          <td>15</td>
+          <td>Traffico</td>
+          <td>Urbano</td>
+        </tr>
+        <tr>
+          <td>TV</td>
+          <td>Pederobba</td>
+          <td>Pederobba</td>
+          <td>45,85773</td>
+          <td>11,99117</td>
+          <td>174</td>
+          <td>Fondo</td>
+          <td>Urbano</td>
+        </tr>
+        <tr>
+          <td>VE</td>
+          <td>San Donà di Piave</td>
+          <td>S.Donà di Piave</td>
+          <td>45,62909</td>
+          <td>12,59068</td>
+          <td>1</td>
+          <td>Fondo</td>
+          <td>Urbano</td>
+        </tr>
+        <tr>
+          <td>VE</td>
+          <td>Venezia</td>
+          <td>VE – Malcontenta</td>
+          <td>45,43826</td>
+          <td>12,20553</td>
+          <td>2</td>
+          <td>Industriale</td>
+          <td>Suburbano</td>
+        </tr>
+        <tr>
+          <td>VE</td>
+          <td>Venezia</td>
+          <td>VE - Parco Bissuola</td>
+          <td>45,49962</td>
+          <td>12,26125</td>
+          <td>1</td>
+          <td>Fondo</td>
+          <td>Urbano</td>
+        </tr>
+        <tr>
+          <td>VE</td>
+          <td>Venezia</td>
+          <td>VE - Sacca Fisola</td>
+          <td>45,42842</td>
+          <td>12,31293</td>
+          <td>1</td>
+          <td>Fondo</td>
+          <td>Urbano</td>
+        </tr>
+        <tr>
+          <td>VE</td>
+          <td>Venezia</td>
+          <td>VE - Via Tagliamento</td>
+          <td>45,4896</td>
+          <td>12,21753</td>
+          <td>3</td>
+          <td>Traffico</td>
+          <td>Urbano</td>
+        </tr>
+        <tr>
+          <td>VE</td>
+          <td>Venezia</td>
+          <td>VE - Via Beccaria</td>
+          <td>45,47457</td>
+          <td>12,2197</td>
+          <td>2</td>
+          <td>Traffico</td>
+          <td>Urbano</td>
+        </tr>
+        <tr>
+          <td>VE</td>
+          <td>Venezia</td>
+          <td>VE- Rio Novo</td>
+          <td>45,43558</td>
+          <td>12,32313</td>
+          <td>1</td>
+          <td>Traffico</td>
+          <td>Urbano</td>
+        </tr>
+        <tr>
+          <td>VE</td>
+          <td>Venezia</td>
+          <td>VE – P.ta Fusina</td>
+          <td>45,42253</td>
+          <td>12,25378</td>
+          <td>0</td>
+          <td>Industriale</td>
+          <td>Suburbano</td>
+        </tr>
+        <tr>
+          <td>VE</td>
+          <td>Portogruaro</td>
+          <td>Portogruaro</td>
+          <td>45,77664</td>
+          <td>12,83552</td>
+          <td>3</td>
+          <td>Fondo</td>
+          <td>Urbano</td>
+        </tr>
+        <tr>
+          <td>VI</td>
+          <td>Asiago</td>
+          <td>Asiago Cima Ekar</td>
+          <td>45,84864</td>
+          <td>11,56906</td>
+          <td>1360</td>
+          <td>Fondo</td>
+          <td>Rurale</td>
+        </tr>
+        <tr>
+          <td>VI</td>
+          <td>Bassano del Grappa</td>
+          <td>Bassano del Grappa</td>
+          <td>45,75927</td>
+          <td>11,73585</td>
+          <td>114</td>
+          <td>Fondo</td>
+          <td>Urbano</td>
+        </tr>
+        <tr>
+          <td>VI</td>
+          <td>Chiampo</td>
+          <td>Chiampo</td>
+          <td>45,53645</td>
+          <td>11,29379</td>
+          <td>154</td>
+          <td>Industriale</td>
+          <td>Urbano</td>
+        </tr>
+        <tr>
+          <td>VI</td>
+          <td>Zermeghedo</td>
+          <td>Zermeghedo</td>
+          <td>45,47838</td>
+          <td>11,37818</td>
+          <td>84</td>
+          <td>Industriale</td>
+          <td>Suburbano</td>
+        </tr>
+        <tr>
+          <td>VI</td>
+          <td>Schio</td>
+          <td>Schio</td>
+          <td>45,71356</td>
+          <td>11,36766</td>
+          <td>189</td>
+          <td>Fondo</td>
+          <td>Urbano</td>
+        </tr>
 
+        <tr>
+          <td>VI</td>
+          <td>Vicenza</td>
+          <td>VI - Quartiere Italia</td>
+          <td>45,55956</td>
+          <td>11,53865</td>
+          <td>37</td>
+          <td>Fondo</td>
+          <td>Urbano</td>
+        </tr>
+        <tr>
+          <td>VI</td>
+          <td>Vicenza</td>
+          <td>VI - S. Felice</td>
+          <td>45,54499</td>
+          <td>11,53318</td>
+          <td>34</td>
+          <td>Traffico</td>
+          <td>Urbano</td>
+        </tr>
+        <tr>
+          <td>VI</td>
+          <td>Vicenza</td>
+          <td>VI – Ferrovieri</td>
+          <td>45,53226</td>
+          <td>11,52217</td>
+          <td>33</td>
+          <td>Fondo</td>
+          <td>Urbano</td>
+        </tr>
+        <tr>
+          <td>VR</td>
+          <td>Boscochiesanuova</td>
+          <td>Chiesanuova</td>
+          <td>45,5892</td>
+          <td>11,03691</td>
+          <td>824</td>
+          <td>Fondo</td>
+          <td>Rurale</td>
+        </tr>
+        <tr>
+          <td>VR</td>
+          <td>Legnago</td>
+          <td>Legnago</td>
+          <td>45,18263</td>
+          <td>11,31051</td>
+          <td>15</td>
+          <td>Fondo</td>
+          <td>Urbano</td>
+        </tr>
+        <tr>
+          <td>VR</td>
+          <td>S. Bonifacio</td>
+          <td>S. Bonifacio</td>
+          <td>45,39883</td>
+          <td>11,2853</td>
+          <td>31</td>
+          <td>Traffico</td>
+          <td>Urbano</td>
+        </tr>
+        <tr>
+          <td>VR</td>
+          <td>Verona</td>
+          <td>VR- Borgo Milano</td>
+          <td>45,44522</td>
+          <td>10,95395</td>
+          <td>68</td>
+          <td>Traffico</td>
+          <td>Urbano</td>
+        </tr>
+        <tr>
+          <td>VR</td>
+          <td>Verona</td>
+          <td>VR-Giarol Grande</td>
+          <td>45,43341</td>
+          <td>11,03058</td>
+          <td>48</td>
+          <td>Fondo</td>
+          <td>Urbano</td>
+        </tr>
+      </tbody>
+    </table>
   </main>
   <script src="{{ url_for('static', filename='js/map.js') }}"></script>
 

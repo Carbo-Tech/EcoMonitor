@@ -1,5 +1,5 @@
 # -*- coding: utf-8 -*-
-from flask import Flask, render_template, request, jsonify
+from flask import Flask, render_template, request, jsonify,send_from_directory
 import mysql.connector
 from mysql.connector import Error
 import os
@@ -59,9 +59,21 @@ def graph():
 
 @app.route('/about', methods=['GET'])
 def about():
-    return render_template('about.html')
+    return render_template('about/index.html')
 
 
+@app.route('/about/arpav', methods=['GET'])
+def arpav():
+    return render_template('about/arpav.html')
+@app.route('/about/pm', methods=['GET'])
+def pm():
+    return render_template('about/pm.html')
+@app.route('/about/ozono', methods=['GET'])
+def ozono():
+    return render_template('about/ozono.html')
+@app.route('/about/conclusione', methods=['GET'])
+def conclusione():
+    return render_template('about/conclusione.html')
 @app.route('/contact', methods=['GET'])
 def contact():
     return render_template('contact.html')

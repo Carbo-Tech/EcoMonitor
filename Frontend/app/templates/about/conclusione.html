@@ -1,21 +1,35 @@
 <!DOCTYPE html>
 <html>
+
 <head>
-	<meta charset="utf-8">
-	<title>Inquinamento atmosferico nel Veneto</title>
-	<link rel="stylesheet" type="text/css" href="style.css">
+  <title>About - Inquinamento da Polveri Sottili in Veneto</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/style.css') }}">
 </head>
+
 <body>
-	<header>
-		<div class="logo">Inquinamento atmosferico nel Veneto</div>
-		<nav>
-			<ul>
-				<li><a href="#">Home</a></li>
-				<li><a href="#">Contatti</a></li>
-			</ul>
-		</nav>
-	</header>
-	<main>
+  <header>
+    <h1 class="logo">Inquinamento da Polveri Sottili in Veneto</h1>
+    <nav>
+      <ul>
+        <li><a href="{{ url_for('home') }}">Home</a></li>
+        <li><a href="{{ url_for('graph') }}">Graph</a></li>
+        <li><a href="{{ url_for('stationsmap') }}">Map</a></li>
+        <li><a href="{{ url_for('about') }}">About</a></li>
+        <li><a href="{{ url_for('contact') }}">Contact</a></li>
+      </ul>
+    </nav>
+    <nav class="mini">
+      <ul>
+        <li><a href="{{ url_for('arpav') }}">ARPAV</a></li>
+        <li><a href="{{ url_for('pm') }}">Particulate Matter</a></li>
+        <li><a href="{{ url_for('ozono') }}">Ozono</a></li>
+        <li><a href="{{ url_for('conclusione') }}">Conclusione</a></li>
+      </ul>
+    </nav>
+  </header>
+  <main>
 		<h1>Inquinamento atmosferico nel Veneto</h1>
 		<p>L'inquinamento atmosferico rappresenta una minaccia significativa per la salute umana e l'ambiente, e le ricerche condotte sull'inquinamento da particolato e ozono nel Veneto dimostrano come la qualità dell'aria in questa regione sia influenzata da diversi fattori antropici e naturali.</p>
 		<p>Le stazioni di monitoraggio dell'aria dell'ARPAV hanno fornito dati importanti sulla qualità dell'aria nel Veneto, evidenziando come l'inquinamento atmosferico sia ancora un problema significativo in alcune zone della regione. Tuttavia, grazie alla crescente attenzione sulla qualità dell'aria e alle misure di controllo delle emissioni, i livelli di inquinamento sono migliorati nel corso degli anni.</p>

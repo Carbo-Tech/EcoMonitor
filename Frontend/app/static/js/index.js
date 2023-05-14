@@ -100,13 +100,58 @@ function paginateTable(pageSize) {
   showPage(currentPage);
 }
 
-// Fetch the data from the API
+async function fetchUsingRest() {
+  try {
+    const response = await fetch("/api/v1/stations");
+    const stations = await response.json();
+
+    const pollutants = await Promise.all(
+      stations.map(async (station) => {
+        console.log(station["nome"])
+        const response = await fetch(`/api/v1/stations/${station.nome}/pollutants`);
+        const pollutants = await response.json();
+        return { station, pollutants };
+      })
+    );
+    const records = await Promise.all(
+      pollutants.map(async (row) => {
+        try {
+          const response = await Promise.all(
+            row.pollutants.map(async (pollutant) => {
+              const records = await fetch(`/api/v1/stations/${row.station.nome}/pollutants/${pollutant}`).then((response) => response.json());
+              return { pollutant, records };
+            })
+          );
+          return { station: row.station, pollutants: response };
+        } catch (error) {
+          console.error("Error fetching data:", error);
+          return { station: row.station, pollutants: null };
+        }
+      })
+    );
+    const flattenedData = data.map(({ pollutants }) =>
+      pollutants.flatMap(({ records }) => records)
+    );
+    console.log(flattenedData)
+    return flattenedData
+
+  } catch (error) {
+    console.error("Error fetching data:", error);
+  }
+}
+
+
+
 fetch("/api/v1/stations/any/pollutants/any?orderby=nome")
   .then((response) => response.json())
   .then((data) => {
+    console.log(JSON.stringify(data))
     fillTable(data);
     paginateTable(10);
   })
   .catch((error) => {
     console.error("Error fetching data:", error);
   });
+const res = await fetchUsingRest()
+/* fillTable(res)
+paginateTable(10) */
