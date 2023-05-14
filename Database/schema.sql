@@ -66,9 +66,340 @@ CREATE TABLE `stazioni` (
 --
 
 LOCK TABLES `stazioni` WRITE;
-/*!40000 ALTER TABLE `stazioni` DISABLE KEYS */;
-INSERT INTO `stazioni` VALUES ('500000016','Conegliano','Conegliano','Conegliano','Tr',45.88964844,12.30706215),('500000020','Mansu','Mansue','Mansue\'','Tr',45.83690262,12.51021290),('500000021','TV Via Lancieri','Treviso-via Lancieri N.','Treviso','Tr',45.67179871,12.23771381),('500000068','Belluno Citt','Belluno Citt','Belluno','Be',46.14192581,12.21760273),('500000069','Area Feltrina','Feltre Via Colombo','Feltre','Be',46.03127670,11.90661621),('500000073','Rovigo Borsea','Borsea','Rovigo','Ro',45.03881073,11.79015255),('500000077','Adria','Adria','Rovigo','Ro',45.05560684,12.03500652),('500000079','Rovigo Centro','Rovigo Centro','Rovigo','Ro',45.07383347,11.78246975),('500000082','Badia Polesine-Villa','M M 11 ROVIGO','Badia Polesine','Ro',45.10401917,11.55265236),('500000099','Quartiere Italia','VI - Quartiere Italia','Vicenza','Vi',45.55964279,11.53874493),('500000100','Montebello','Montebello Nord','Montebello Vicentino','Vi',45.46547699,11.38625240),('500000103','Schio','Schio','Schio','Vi',45.71353531,11.36762714),('500000106','Bassano','Bassano del Grappa','Bassano Del Grappa','Vi',45.75942993,11.73587036),('500000116','Legnago','Legnago','Legnago','Ve',45.18257523,11.31052303),('500000120','San Bonifacio','S. Bonifacio','San Bonifacio','Ve',45.39886475,11.28525543),('500000134','Verona - C.so Milano','Verona - C.so Milano','Verona','Ve',45.44440460,10.96300793),('500000141','Sacca Fisola','VE S. Fisola','Venezia','Ve',45.42837524,12.31290531),('500000149','San Don di Piave','S.Dona Piave','San Dona\' Di Piave','Ve',45.62908554,12.59043121),('500000156','VE Parco Bissuola','Parco Bissuola','Venezia','Ve',45.49819183,12.26122189),('500000197','PD Mandria','PD Mandria','Padova','Pa',45.37093735,11.84090519),('500000200','PD Granze','PD Granze','Padova','Pa',45.37754440,11.94004059),('500015004','Pieve di Alpago','Pieve di Alpago','(pieve D\'alpago Fino Al 22/02/2016)','Be',46.16250610,12.36110687),('500015029','Chiampo','Chiampo, Via dei Laghi','Chiampo','Vi',45.53645706,11.29369545),('500015304','Cima Ekar','Asiago','Asiago','Vi',45.84869766,11.56905079),('500015645','San Felice','VI - San Felice','Vicenza','Vi',45.54502106,11.53325653),('500015821','Boscochiesanuova','Boscochiesanuova','Verona','Ve',45.58921814,11.03695011),('500021732','VE Via Tagliamento','ME V. Tagliamento','Venezia','Ve',45.48958588,12.21754551),('500021765','VE Via Beccaria','VE - Via Beccaria','Venezia','Ve',45.47459793,12.21974945),('500021785','PD Arcella','Arcella Guido Reni','Padova','Pa',45.43285751,11.88971710),('500021960','Este','Este Stazie Bragadine','Este','Pa',45.22700119,11.66622639),('500021975','Parco Colli Euganei','Cinto Euganeo','Cinto Euganeo','Pa',45.28936005,11.64235783),('500022612','Alta Padovana','Carrello - S.Giustina in Colle','Santa Giustina In Colle','Pa',45.60152817,11.90351582),('500022715','Ferrovieri','VI - Ferrovieri','Vicenza','Vi',45.53221130,11.52219200),('500023627','VE Malcontenta','VE - Malcontenta','Venezia','Ve',45.43827438,12.20554638),('500031115','VR-Giarol Grande','VR-Giarol Grande','Verona','Ve',45.43347168,11.02956390),('500032515','VE - Rio Novo','VE - Rio Novo','Venezia','Ve',45.43611908,12.31516647);
-/*!40000 ALTER TABLE `stazioni` ENABLE KEYS */;
+/*!40000 ALTER TABLE
+  `stazioni` DISABLE KEYS * /;
+
+INSERT INTO
+  `stazioni`
+VALUES
+  (
+    '500000016',
+    'Conegliano',
+    'Conegliano',
+    'Conegliano',
+    'Tr',
+    45.88964844,
+    12.30706215
+  ),
+(
+    '500000020',
+    'Mansue''',
+    'Mansue''',
+    'Mansue''',
+    'Tr',
+    45.83690262,
+    12.51021290
+  ),
+(
+    '500000021',
+    'TV Via Lancieri',
+    'Treviso-via Lancieri N.',
+    'Treviso',
+    'Tr',
+    45.67179871,
+    12.23771381
+  ),
+(
+    '500000068',
+    'Belluno Citta''',
+    'Belluno Citta''',
+    'Belluno',
+    'Be',
+    46.14192581,
+    12.21760273
+  ),
+(
+    '500000069',
+    'Area Feltrina',
+    'Feltre Via Colombo',
+    'Feltre',
+    'Be',
+    46.03127670,
+    11.90661621
+  ),
+(
+    '500000073',
+    'Rovigo Borsea',
+    'Borsea',
+    'Rovigo',
+    'Ro',
+    45.03881073,
+    11.79015255
+  ),
+(
+    '500000077',
+    'Adria',
+    'Adria',
+    'Rovigo',
+    'Ro',
+    45.05560684,
+    12.03500652
+  ),
+(
+    '500000079',
+    'Rovigo Centro',
+    'Rovigo Centro',
+    'Rovigo',
+    'Ro',
+    45.07383347,
+    11.78246975
+  ),
+(
+    '500000082',
+    'Badia Polesine-Villa',
+    'M M 11 ROVIGO',
+    'Badia Polesine',
+    'Ro',
+    45.10401917,
+    11.55265236
+  ),
+(
+    '500000099',
+    'Quartiere Italia',
+    'VI - Quartiere Italia',
+    'Vicenza',
+    'Vi',
+    45.55964279,
+    11.53874493
+  ),
+(
+    '500000100',
+    'Montebello',
+    'Montebello Nord',
+    'Montebello Vicentino',
+    'Vi',
+    45.46547699,
+    11.38625240
+  ),
+(
+    '500000103',
+    'Schio',
+    'Schio',
+    'Schio',
+    'Vi',
+    45.71353531,
+    11.36762714
+  ),
+(
+    '500000106',
+    'Bassano',
+    'Bassano del Grappa',
+    'Bassano Del Grappa',
+    'Vi',
+    45.75942993,
+    11.73587036
+  ),
+(
+    '500000116',
+    'Legnago',
+    'Legnago',
+    'Legnago',
+    'Ve',
+    45.18257523,
+    11.31052303
+  ),
+(
+    '500000120',
+    'San Bonifacio',
+    'S. Bonifacio',
+    'San Bonifacio',
+    'Ve',
+    45.39886475,
+    11.28525543
+  ),
+(
+    '500000134',
+    'Verona - C.so Milano',
+    'Verona - C.so Milano',
+    'Verona',
+    'Ve',
+    45.44440460,
+    10.96300793
+  ),
+(
+    '500000141',
+    'Sacca Fisola',
+    'VE S. Fisola',
+    'Venezia',
+    'Ve',
+    45.42837524,
+    12.31290531
+  ),
+(
+    '500000149',
+    'San Dona'' di Piave',
+    'S.Dona'' Piave',
+    'San Dona'''' Di Piave',
+    'Ve',
+    45.62908554,
+    12.59043121
+  ),
+(
+    '500000156',
+    'VE Parco Bissuola',
+    'Parco Bissuola',
+    'Venezia',
+    'Ve',
+    45.49819183,
+    12.26122189
+  ),
+(
+    '500000197',
+    'PD Mandria',
+    'PD Mandria',
+    'Padova',
+    'Pa',
+    45.37093735,
+    11.84090519
+  ),
+(
+    '500000200',
+    'PD Granze',
+    'PD Granze',
+    'Padova',
+    'Pa',
+    45.37754440,
+    11.94004059
+  ),
+(
+    '500015004',
+    'Pieve di Alpago',
+    'Pieve di Alpago',
+    '(pieve D\'alpago Fino Al 22/02/2016)',
+    'Be',
+    46.16250610,
+    12.36110687
+  ),
+(
+    '500015029',
+    'Chiampo',
+    'Chiampo, Via dei Laghi',
+    'Chiampo',
+    'Vi',
+    45.53645706,
+    11.29369545
+  ),
+(
+    '500015304',
+    'Cima Ekar',
+    'Asiago',
+    'Asiago',
+    'Vi',
+    45.84869766,
+    11.56905079
+  ),
+(
+    '500015645',
+    'San Felice',
+    'VI - San Felice',
+    'Vicenza',
+    'Vi',
+    45.54502106,
+    11.53325653
+  ),
+(
+    '500015821',
+    'Boscochiesanuova',
+    'Boscochiesanuova',
+    'Verona',
+    'Ve',
+    45.58921814,
+    11.03695011
+  ),
+(
+    '500021732',
+    'VE Via Tagliamento',
+    'ME V. Tagliamento',
+    'Venezia',
+    'Ve',
+    45.48958588,
+    12.21754551
+  ),
+(
+    '500021765',
+    'VE Via Beccaria',
+    'VE - Via Beccaria',
+    'Venezia',
+    'Ve',
+    45.47459793,
+    12.21974945
+  ),
+(
+    '500021785',
+    'PD Arcella',
+    'Arcella Guido Reni',
+    'Padova',
+    'Pa',
+    45.43285751,
+    11.88971710
+  ),
+(
+    '500021960',
+    'Este',
+    'Este Stazie Bragadine',
+    'Este',
+    'Pa',
+    45.22700119,
+    11.66622639
+  ),
+(
+    '500021975',
+    'Parco Colli Euganei',
+    'Cinto Euganeo',
+    'Cinto Euganeo',
+    'Pa',
+    45.28936005,
+    11.64235783
+  ),
+(
+    '500022612',
+    'Alta Padovana',
+    'Carrello - S.Giustina in Colle',
+    'Santa Giustina In Colle',
+    'Pa',
+    45.60152817,
+    11.90351582
+  ),
+(
+    '500022715',
+    'Ferrovieri',
+    'VI - Ferrovieri',
+    'Vicenza',
+    'Vi',
+    45.53221130,
+    11.52219200
+  ),
+(
+    '500023627',
+    'VE Malcontenta',
+    'VE - Malcontenta',
+    'Venezia',
+    'Ve',
+    45.43827438,
+    12.20554638
+  ),
+(
+    '500031115',
+    'VR-Giarol Grande',
+    'VR-Giarol Grande',
+    'Verona',
+    'Ve',
+    45.43347168,
+    11.02956390
+  ),
+(
+    '500032515',
+    'VE - Rio Novo',
+    'VE - Rio Novo',
+    'Venezia',
+    'Ve',
+    45.43611908,
+    12.31516647
+  );
+
+/*!40000 ALTER TABLE `stazioni` ENABLE KEYS */
+;
+
 UNLOCK TABLES;
 
 --
