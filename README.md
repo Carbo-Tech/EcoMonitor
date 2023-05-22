@@ -3,7 +3,7 @@
   <img alt="Version" src="https://img.shields.io/badge/version-development-blue.svg?cacheSeconds=2592000" />
 </p>
 
-EcoMonitor è un'applicazione per la gestione e l'analisi dei dati ambientali, con un focus sull'inquinamento da polveri sottili (PM10). L'applicazione è stata sviluppata per la classe 5BI dell'a.s. 2021-22 nell'ambito del corso di Educazione Civica.
+EcoMonitor è un'applicazione per la gestione e l'analisi dei dati ambientali, con un focus sull'inquinamento da polveri sottili (PM10). L'applicazione è stata sviluppata per la classe 5BI dell'a.s. 2022-23 nell'ambito del corso di Educazione Civica.
 
 ## Scopi del Progetto
 > L'obiettivo di EcoMonitor è quello di sensibilizzare gli utenti sui problemi dell'inquinamento atmosferico, in particolare sulle conseguenze dell'emissione di polveri sottili (PM10) sull'ambiente e sulla salute umana. L'applicazione fornisce un'interfaccia per la visualizzazione dei dati raccolti da diverse stazioni di monitoraggio ambientale e li analizza in modo critico, fornendo informazioni dettagliate sulla qualità dell'aria, tendenze temporali e suggerimenti sui comportamenti da adottare per ridurre l'impatto dell'inquinamento.
