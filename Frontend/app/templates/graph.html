@@ -1,51 +1,96 @@
 <!DOCTYPE html>
 <html>
-<head>
+  <head>
     <title>Inquinamento da Polveri Sottili in Veneto</title>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/style.css') }}">
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="{{ url_for('static', filename='css/style.css') }}"
+    />
     <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.4/Chart.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.1/moment.min.js"></script>
 
-    <style>
+    <style></style>
+  </head>
 
-    </style>
-</head>
-
-<body>
+  <body>
     <header>
-        <h1 class="logo">Inquinamento da Polveri Sottili in Veneto</h1>
-        <nav>
-            <ul>
-                <li><a href="{{ url_for('home') }}">Home</a></li>
-                <li><a href="{{ url_for('graph') }}">Graph</a></li>
-                
-                <li><a href="{{ url_for('stationsmap') }}">Map</a></li>
+      <h1 class="logo">Inquinamento da Polveri Sottili in Veneto</h1>
+      <nav>
+        <ul>
+          <li><a href="{{ url_for('home') }}">Home</a></li>
+          <li><a href="{{ url_for('graph') }}">Graph</a></li>
 
-                <li><a href="{{ url_for('about') }}">About</a></li>
-                <li><a href="{{ url_for('contact') }}">Contact</a></li>
-            </ul>
-        </nav>
+          <li><a href="{{ url_for('stationsmap') }}">Map</a></li>
+
+          <li><a href="{{ url_for('about') }}">About</a></li>
+          <li><a href="{{ url_for('contact') }}">Contact</a></li>
+        </ul>
+      </nav>
     </header>
-    <main >
-        <div id="selection" >
-            <select id="stations">
-                <option value="" selected disabled hidden>Choose Station</option>
-            </select>
-            <select id="pollutants" disabled>
-                <option value="" selected disabled hidden>Choose Pollutant</option>
-            </select>
-        </div>
-        <div class="chart-container" style="position: relative; height:50vh; width:90%;margin: auto; text-align: center;">
-            <canvas id="myChart"></canvas>
-        </div>
-         
+    <main>
+      <div id="selection">
+        <select id="stations">
+          <option value="" selected disabled hidden>Choose Station</option>
+        </select>
+        <select id="pollutants" disabled>
+          <option value="" selected disabled hidden>Choose Pollutant</option>
+        </select>
+      </div>
+      <div
+        class="chart-container"
+        style="
+          position: relative;
+          height: 50vh;
+          width: 90%;
+          margin: auto;
+          text-align: center;
+        "
+      >
+        <canvas id="myChart"></canvas>
+      </div>
+      <div id="conclusione">
+        <ul>
+          <li>
+            Impatto della pandemia: Il 2020 è stato fortemente influenzato dalla
+            pandemia di COVID-19, che ha portato a un significativo cambiamento
+            nelle attività umane e ha avuto un impatto slil'inquinamento
+            atmosferico. Durante i periodi di lockdown e restrizioni, si è
+            verificata una notevole riduzione dell'inquinamento da polveri
+            sottili rispetto all'anno precedente. Questo evidenzia come le
+            misure di confinamento abbiano avuto un impatto positivo slila
+            qualità dell'aria, riducendo le emissioni derivanti da fonti come il
+            traffico veicolare e l'industria.
+          </li>
+          <li>
+            Variazioni stagionali: Il grafico può mostrare anche le variazioni
+            stagionali nell'inquinamento da polveri sottili. Potrebbe essere
+            evidente un aumento dell'inquinamento durante i mesi più freddi
+            dell'anno, quando l'uso di sistemi di riscaldamento domestico e
+            industriale è più diffuso. Questo suggerisce la necessità di
+            adottare misure specifiche per affrontare l'inquinamento da fonti di
+            riscaldamento, come l'uso di tecnologie più pulite e la promozione
+            di fonti di energia alternative.
+          </li>
+          <li>
+            L'analisi del grafico sottolinea l'importanza di un monitoraggio
+            continuo dell'inquinamento atmosferico e della sua divligazione al
+            pubblico. I dati sui livelli di polveri sottili possono aiutare a
+            valutare l'efficacia delle politiche ambientali e delle misure di
+            mitigazione adottate. Inoltre, evidenziare le tendenze stagionali e
+            le correlazioni con eventi specifici, come la pandemia, può
+            contribuire a sensibilizzare l'opinione pubblica e incoraggiare
+            literiori azioni per migliorare la qualità dell'aria.
+          </li>
+        </ul>
+      </div>
     </main>
     <footer>
-        <p>&copy; 2023 - Progetto Flask</p>
+      <p>&copy; 2023 - Progetto Flask</p>
     </footer>
-    
+
     <script src="{{ url_for('static', filename='js/graph.js') }}"></script>
-</body>
+  </body>
 </html>

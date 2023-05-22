@@ -36,6 +36,14 @@ nav {
   background-color: #1a1a1a;
   box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.2);
 }
+#conclusione ul li{
+  margin-bottom: 15px;
+}
+#conclusione {
+  margin: 15px;
+}
+
+
 
 nav ul {
   list-style-type: none;
